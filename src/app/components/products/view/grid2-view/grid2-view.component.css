@@ -1,0 +1,3 @@
+.btn-wishlist.active:before{
+  content: "\2764";
+}

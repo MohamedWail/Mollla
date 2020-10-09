@@ -1,0 +1,53 @@
+<div class="products mb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of asd, let i = index">
+      <div class="product product-7 text-center">
+        <figure class="product-media">
+          <span class="product-label label-new">New</span>
+          <a [routerLink]="'../'+i">
+            <img src="{{product.image}}" alt="{{product.title}}" class="product-image">
+          </a>
+
+          <div class="product-action-vertical">
+            <a (click)="addWishlistItem(i)" [ngClass]="{'active': product.wishlisted}" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
+            <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+            <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
+          </div><!-- End .product-action-vertical -->
+
+          <div class="product-action">
+            <a (click)="addtoCart(i)" class="btn-product btn-cart"><span>add to cart</span></a>
+          </div><!-- End .product-action -->
+        </figure><!-- End .product-media -->
+
+        <div class="product-body">
+          <div class="product-cat">
+            <a href="#">{{product.category}}</a>
+          </div><!-- End .product-cat -->
+          <h3 class="product-title"><a href="product.html">{{product.title | shorten:16}}</a></h3><!-- End .product-title -->
+          <div class="product-price">
+            ${{product.price}}
+          </div><!-- End .product-price -->
+          <div class="ratings-container">
+            <div class="ratings">
+              <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
+            </div><!-- End .ratings -->
+            <span class="ratings-text">( 2 Reviews )</span>
+          </div><!-- End .rating-container -->
+
+          <div class="product-nav product-nav-thumbs">
+            <a href="#" class="active">
+              <img src="assets/images/products/product-4-thumb.jpg" alt="product desc">
+            </a>
+            <a href="#">
+              <img src="assets/images/products/product-4-2-thumb.jpg" alt="product desc">
+            </a>
+
+            <a href="#">
+              <img src="assets/images/products/product-4-3-thumb.jpg" alt="product desc">
+            </a>
+          </div><!-- End .product-nav -->
+        </div><!-- End .product-body -->
+      </div><!-- End .product -->
+    </div><!-- End .col-sm-6 -->
+  </div><!-- End .row -->
+</div><!-- End .products -->
